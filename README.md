@@ -8,4 +8,5 @@ You will find limestone when mining.
 Concrete take time to dry. When you place concrete it will be darker then when it is dry.
 
 
-Licence - DWYWPL
+Code Licence - MIT
+Media Licence - CC0
