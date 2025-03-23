@@ -10,7 +10,7 @@ minetest.register_node("myconcrete:limestone", {
 		},
 	drawtype = "normal",
 	paramtype = "light",
---	drop = "myconcrete:lime",
+	drop = "myconcrete:lime",
 	groups = {cracky = 2},
 --	sounds = default.node_sound_stone_defaults(),
 })
@@ -25,3 +25,9 @@ minetest.register_craft({
 	output = "myconcrete:limestone",
 	recipe = {"myconcrete:lime"},
 })
+minetest.register_craft({
+		type = "cooking",
+		output = "myconcrete:limestone 1",
+		recipe = "myconcrete:lime",
+		cooktime = 5
+	})
