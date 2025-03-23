@@ -1,1 +1,1 @@
-Myconcrete adds concrete to Minetest
+Myconcrete adds concrete blocks, sidewalks and other items
