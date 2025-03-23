@@ -21,6 +21,7 @@ dofile(minetest.get_modpath("myconcrete").."/concrete.lua")
 dofile(minetest.get_modpath("myconcrete").."/limestone.lua")
 dofile(minetest.get_modpath("myconcrete").."/mapgen.lua")
 dofile(minetest.get_modpath("myconcrete").."/aliases.lua")
+dofile(minetest.get_modpath("myconcrete").."/nodes.lua")
 --dofile(minetest.get_modpath("myconcrete").."/machine.lua")
 
 --if minetest.get_modpath("mypaint") then
