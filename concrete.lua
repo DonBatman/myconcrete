@@ -69,10 +69,10 @@ for i in ipairs (item_tab) do
 	local cbox = item_tab[i][6]
 
 local concrete_tab = { --num, desc, imgnum, gro
-{"","","",{cracky = 1}},
-{"3","3","^[colorize:black:100",{cracky = 1, not_in_creative_inventory = 1}},
-{"2","2","^[colorize:black:50",{cracky = 1, not_in_creative_inventory = 1}},
-{"1","1","^[colorize:black:25",{cracky = 1, not_in_creative_inventory = 1}},
+{"","","",{cracky = 1, concrete = 1}},
+{"3","3","^[colorize:black:100",{cracky = 1, not_in_creative_inventory = 1, concrete = 1}},
+{"2","2","^[colorize:black:50",{cracky = 1, not_in_creative_inventory = 1, concrete = 1}},
+{"1","1","^[colorize:black:25",{cracky = 1, not_in_creative_inventory = 1, concrete = 1}},
 }
 for i in ipairs (concrete_tab) do
 	local num = concrete_tab[i][1]
