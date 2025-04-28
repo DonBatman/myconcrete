@@ -46,6 +46,94 @@ local fence_cbox = {
 	fixed = {-1/8, -1/2, -1/8, 1/8, 1/2, 1/8},
 }
 
+local paintables = {
+	"myconcrete:concrete", "myconcrete:sidewalk", "myconcrete:ramp_concrete", "myconcrete:ramp_concrete_long", "myconcrete:ramp_sidewalk", "myconcrete:ramp_sidewalk_long"
+}
+
+for _, entry in ipairs(myconcrete.colors) do
+	local color = entry[1]
+	local desc = entry[2]
+	local paint = "^[colorize:"..entry[3]
+	
+core.register_node("myconcrete:concrete_" .. color, {
+	description = desc .. " Concrete Block",
+	tiles = {"myconcrete_concrete.png".. paint},
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2,cracky = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_wood_defaults(),
+})
+core.register_node("myconcrete:sidewalk_" .. color, {
+	description = desc .. " Concrete Block",
+	tiles = {"myconcrete_sidewalk.png".. paint},
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2,cracky = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_wood_defaults(),
+})
+-----------------------------------------------------------------------------------------
+core.register_node("myconcrete:ramp_concrete_" .. color, {
+	description = desc .. " Concrete Ramp",
+	drawtype = "mesh",
+	mesh = "myconcrete_slope.obj",
+	tiles = {"myconcrete_concrete_mesh.png"..paint},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2,cracky = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_wood_defaults(),
+	selection_box = slope_cbox,
+})
+core.register_node("myconcrete:ramp_sidewalk_" .. color, {
+	description = desc .. " Sidewalk Ramp",
+	drawtype = "mesh",
+	mesh = "myconcrete_slope.obj",
+	tiles = {"myconcrete_sidewalk_mesh.png".. paint},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2,cracky = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_wood_defaults(),
+	selection_box = slope_cbox,
+})
+-----------------------------------------------------------------------------------------------------
+core.register_node("myconcrete:ramp_concrete_long_" .. color, {
+	description = desc .. " Sidewalk Ramp Long",
+	drawtype = "mesh",
+	mesh = "myconcrete_slope_long.obj",
+	tiles = {"myconcrete_concrete_mesh.png".. paint},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2,cracky = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_wood_defaults(),
+	selection_box = slope_cbox_long,
+})
+core.register_node("myconcrete:ramp_sidewalk_long_" .. color, {
+	description = desc .. " Sidewalk Ramp Long",
+	drawtype = "mesh",
+	mesh = "myconcrete_slope_long.obj",
+	tiles = {"myconcrete_sidewalk_long_mesh.png".. paint},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	is_ground_content = false,
+	groups = {choppy = 2, oddly_breakable_by_hand = 2,cracky = 2, not_in_creative_inventory=1},
+	sounds = default.node_sound_wood_defaults(),
+	selection_box = slope_cbox_long,
+})
+------------------------------------------------------------------------------------------------------
+
+end
+if core.get_modpath("mypaint") then
+local colors = {}
+for _, entry in ipairs(myconcrete.colors) do
+	table.insert(colors, entry[1])
+end
+	mypaint.register(paintables, colors)
+end
+
+
+
+
+
 local item_tab = { -- mat, descr, img, dtype, cbox
 {"sidewalk","Sidewalk","sidewalk","","normal",""},
 {"concrete","Concrete","concrete","","normal",""},
@@ -91,7 +179,6 @@ minetest.register_node("myconcrete:"..mat..num, {
 	paramtype2 = "facedir",
 	drop = "myconcrete:"..mat,
 	groups = gro,
---	stack_max = 250,
 	sounds = default.node_sound_stone_defaults(),
 	node_box = cbox,
 	selection_box = cbox,
@@ -99,9 +186,7 @@ minetest.register_node("myconcrete:"..mat..num, {
 
 after_place_node = function(pos, placer, itemstack, pointed_thing)
 	local node = minetest.get_node(pos)
---	if node == "myconcrete:"..mat then
 	   minetest.set_node(pos, {name = "myconcrete:"..mat.."3", param2 = node.param2})
---	end
 end,
 })
 
