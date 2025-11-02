@@ -215,3 +215,24 @@ minetest.register_craft({
 
 end
 end
+
+stairs.register_stair_and_slab("myconcrete:sidewalk",
+			"myconcrete:sidewalk", 
+			{cracky=2}, 
+			{"myconcrete_sidewalk.png"},
+			"Sidewalk Stairs", 
+			"Sidewalk Slab", 
+			default.node_sound_wood_defaults(),  
+			{"myconcrete_sidewalk.png"},
+			"Sidewalk Inner Stairs", 
+			"Sidewalk Outer Stairs")
+stairs.register_stair_and_slab("myconcrete:concrete",
+			"myconcrete:concrete", 
+			{cracky=2}, 
+			{"myconcrete_concrete.png"},
+			"Concrete Stairs", 
+			"Concrete Slab", 
+			default.node_sound_wood_defaults(),  
+			{"myconcrete_sidewalk.png"},
+			"Concrete Inner Stairs", 
+			"Concrete Outer Stairs")
