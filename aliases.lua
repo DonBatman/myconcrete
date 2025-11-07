@@ -5,6 +5,8 @@ minetest.register_alias("mystreets:precast_concrete_seperating_wall", 	"myconcre
 minetest.register_alias("mystreets:precast_concrete_cylinder", 		"myconcrete:precast_concrete_cylinder")
 minetest.register_alias("mystreets:ramp_sidewalk", 			"myconcrete:ramp_sidewalk")
 minetest.register_alias("mystreets:ramp_sidewalk_long", 		"myconcrete:ramp_sidewalk_long")
+minetest.register_alias("mystreets:ramp_sidewalk_long3", 		"myconcrete:ramp_sidewalk_long3")
+minetest.register_alias("mystreets:ramp_sidewalk_long4", 		"myconcrete:ramp_sidewalk_long4")
 minetest.register_alias("mystreets:ramp_concrete", 			"myconcrete:ramp_concrete")
 minetest.register_alias("mystreets:ramp_concrete_long", 		"myconcrete:ramp_concrete_long")
 minetest.register_alias("mystreets:manhole", 				"myconcrete:manhole")

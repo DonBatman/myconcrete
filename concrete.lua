@@ -22,6 +22,33 @@ local slope_cbox_long = {
 	}
 }
 
+local slope_cbox_long3 = {
+	type = "fixed",
+	fixed = {
+			{-0.5, -0.5, -2.5, 0.5, -0.4375, 0.5},
+			{-0.5, -0.5, -2.1875, 0.5, -0.3125, 0.5},
+			{-0.5, -0.5, -1.75, 0.5, -0.1875, 0.5},
+			{-0.5, -0.5, -1.375, 0.5, -0.0625, 0.5},
+			{-0.5, -0.5, -0.9375, 0.5, 0.0625, 0.5},
+			{-0.5, -0.5, -0.5625, 0.5, 0.1875, 0.5},
+			{-0.5, -0.5, -0.1875, 0.5, 0.3125, 0.5},
+			{-0.5, -0.5, 0.1875, 0.5, 0.4375, 0.5},
+	}
+}
+
+local slope_cbox_long4 = {
+	type = "fixed",
+	fixed = {
+			{-0.5, -0.5, -3.5, 0.5, -0.4375, 0.5},
+			{-0.5, -0.5, -3, 0.5, -0.3125, 0.5},
+			{-0.5, -0.5, -2.5, 0.5, -0.1875, 0.5},
+			{-0.5, -0.5, -2, 0.5, -0.0625, 0.5},
+			{-0.5, -0.5, -1.5, 0.5, 0.0625, 0.5},
+			{-0.5, -0.5, -1, 0.5, 0.1875, 0.5},
+			{-0.5, -0.5, -0.5, 0.5, 0.3125, 0.5},
+			{-0.5, -0.5, -0, 0.5, 0.4375, 0.5},
+	}
+}
 local sep_wall_cbox = {
 	type = "fixed",
 	fixed = {
@@ -52,6 +79,8 @@ local item_tab = { -- mat, descr, img, dtype, cbox
 
 {"ramp_sidewalk",	"Sidewalk Ramp",	"sidewalk_mesh",	"myconcrete_slope.obj","mesh",slope_cbox},
 {"ramp_sidewalk_long",	"Sidewalk Ramp Long",	"sidewalk_long_mesh",	"myconcrete_slope_long.obj","mesh",slope_cbox_long},
+{"ramp_sidewalk_long3",	"Sidewalk Ramp Long 3",	"sidewalk",	"myconcrete_slope_long3.obj","mesh",slope_cbox_long3},
+{"ramp_sidewalk_long4",	"Sidewalk Ramp Long 4",	"sidewalk",	"myconcrete_slope_long4.obj","mesh",slope_cbox_long4},
 
 {"ramp_concrete","Concrete Ramp","concrete_mesh","myconcrete_slope.obj","mesh",slope_cbox},
 {"ramp_concrete_long","Concrete Ramp Long","concrete_mesh","myconcrete_slope_long.obj","mesh",slope_cbox_long},
