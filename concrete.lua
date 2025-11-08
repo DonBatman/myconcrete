@@ -74,20 +74,20 @@ local fence_cbox = {
 }
 
 local item_tab = { -- mat, descr, img, dtype, cbox
-{"sidewalk","Sidewalk","sidewalk","","normal",""},
-{"concrete","Concrete","concrete","","normal",""},
+{"sidewalk",			"Sidewalk",				"sidewalk",				"",								"normal",	""},
+{"concrete",			"Concrete",				"concrete",				"",								"normal",	""},
 
-{"ramp_sidewalk",	"Sidewalk Ramp",	"sidewalk_mesh",	"myconcrete_slope.obj","mesh",slope_cbox},
-{"ramp_sidewalk_long",	"Sidewalk Ramp Long",	"sidewalk_long_mesh",	"myconcrete_slope_long.obj","mesh",slope_cbox_long},
-{"ramp_sidewalk_long3",	"Sidewalk Ramp Long 3",	"sidewalk",	"myconcrete_slope_long3.obj","mesh",slope_cbox_long3},
-{"ramp_sidewalk_long4",	"Sidewalk Ramp Long 4",	"sidewalk",	"myconcrete_slope_long4.obj","mesh",slope_cbox_long4},
+{"ramp_sidewalk",		"Sidewalk Ramp",		"sidewalk_mesh",		"myconcrete_slope.obj",			"mesh",		slope_cbox},
+{"ramp_sidewalk_long",	"Sidewalk Ramp Long",	"sidewalk_long_mesh",	"myconcrete_slope_long.obj",	"mesh",		slope_cbox_long},
+{"ramp_sidewalk_longt",	"Sidewalk Ramp Long 3",	"sidewalk",				"myconcrete_slope_long3.obj",	"mesh",		slope_cbox_long3},
+{"ramp_sidewalk_longf",	"Sidewalk Ramp Long 4",	"sidewalk",				"myconcrete_slope_long4.obj",	"mesh",		slope_cbox_long4},
 
-{"ramp_concrete","Concrete Ramp","concrete_mesh","myconcrete_slope.obj","mesh",slope_cbox},
-{"ramp_concrete_long","Concrete Ramp Long","concrete_mesh","myconcrete_slope_long.obj","mesh",slope_cbox_long},
+{"ramp_concrete",		"Concrete Ramp",		"concrete_mesh",		"myconcrete_slope.obj",			"mesh",		slope_cbox},
+{"ramp_concrete_long",	"Concrete Ramp Long",	"concrete_mesh",		"myconcrete_slope_long.obj",	"mesh",		slope_cbox_long},
 
-{"precast_concrete_seperating_wall",	"Seperation Wall",	"concrete",	"","nodebox",sep_wall_cbox},
-{"precast_concrete_cylinder",	"Concrete Cylinder",	"concrete",	"","nodebox",cyl_cbox},
-{"fence_concrete",	"Concrete Fence",	"concrete",	"","fencelike",fence_cbox},
+{"precast_concrete_seperating_wall","Seperation Wall","concrete",		"",								"nodebox",	sep_wall_cbox},
+{"precast_concrete_cylinder","Concrete Cylinder","concrete",			"",								"nodebox",	cyl_cbox},
+{"fence_concrete",		"Concrete Fence",		"concrete",				"",								"fencelike",fence_cbox},
 }
 for i in ipairs (item_tab) do
 	local mat = item_tab[i][1]
@@ -217,6 +217,24 @@ minetest.register_craft({
 	recipe = {
 		{"", "",""},
 		{"", "","myconcrete:sidewalk"},
+		{"myconcrete:sidewalk", "myconcrete:sidewalk","myconcrete:sidewalk"},
+	}
+})
+--Craft
+minetest.register_craft({
+	output = "myconcrete:ramp_sidewalk_long3 2",
+	recipe = {
+		{"", "",""},
+		{"", "myconcrete:sidewalk","myconcrete:sidewalk"},
+		{"myconcrete:sidewalk", "myconcrete:sidewalk","myconcrete:sidewalk"},
+	}
+})
+--Craft
+minetest.register_craft({
+	output = "myconcrete:ramp_sidewalk_long4 2",
+	recipe = {
+		{"", "","myconcrete:sidewalk"},
+		{"", "myconcrete:sidewalk","myconcrete:sidewalk"},
 		{"myconcrete:sidewalk", "myconcrete:sidewalk","myconcrete:sidewalk"},
 	}
 })
