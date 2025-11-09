@@ -149,7 +149,7 @@ minetest.register_node("myconcrete:rail_"..color, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2},
+	groups = {cracky = 2, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -168,7 +168,7 @@ minetest.register_node("myconcrete:bullard_"..color, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2},
+	groups = {cracky = 2, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -186,7 +186,7 @@ minetest.register_node("myconcrete:curb_stop_"..color, {
 	drawtype = "nodebox",
 	paramtype = "light",
 	paramtype2 = "facedir",
-	groups = {cracky = 2},
+	groups = {cracky = 2, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
